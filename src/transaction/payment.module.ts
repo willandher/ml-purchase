@@ -1,12 +1,12 @@
 import { AdapterModule } from '../shared/http-adapter/adapter.module';
-import { TransactionController } from './api/transaction.controller';
-import { TransactionRepository } from './database/repository/transaction.repository';
-import { TransactionService } from './service/transaction.service';
+import { PaymentController } from './api/payment.controller';
+import { PaymentRepository } from './database/repository/payment.repository';
+import { PaymentService } from './service/payment.service';
 import { Module } from '@nestjs/common';
 
 @Module({
   imports: [AdapterModule],
-  controllers: [TransactionController],
-  providers: [TransactionRepository, TransactionService],
+  controllers: [PaymentController],
+  providers: [PaymentRepository, PaymentService],
 })
-export class TransactionModule {}
+export class PaymentModule {}

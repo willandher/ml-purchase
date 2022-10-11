@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { TransactionRepository } from '../database/repository/transaction.repository';
+import { PaymentRepository } from '../database/repository/payment.repository';
 
 @Injectable()
-export class TransactionService {
-  constructor(private readonly shipmentRepository: TransactionRepository) {}
+export class PaymentService {
+  constructor(private readonly shipmentRepository: PaymentRepository) {}
 
-  async getTransactionById(id: number): Promise<any> {
-    return this.shipmentRepository.getTransactionById(id);
+  async getPaymentById(id: number): Promise<any> {
+    return this.shipmentRepository.getPaymentById(id);
   }
 }

@@ -2,14 +2,14 @@ import { HttpServiceAdapter } from '../../../shared/http-adapter/http-service.ad
 import { Injectable, Logger } from '@nestjs/common';
 
 @Injectable()
-export class TransactionRepository {
+export class PaymentRepository {
   private readonly hostMock = process.env.HOST_MOCK;
-  private readonly logger = new Logger(TransactionRepository.name);
+  private readonly logger = new Logger(PaymentRepository.name);
   constructor(readonly httpServiceAdapter: HttpServiceAdapter) {}
-  getTransactionById(id: number): Promise<any> {
+  getPaymentById(id: number): Promise<any> {
     this.logger.log({ id }, 'search shipment');
     return this.httpServiceAdapter.requestGet(
-      `${this.hostMock}/transactions/${id}`,
+      `${this.hostMock}/payments/${id}`,
     );
   }
 }

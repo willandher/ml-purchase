@@ -1,11 +1,11 @@
 import { Controller, Get, Param } from '@nestjs/common';
-import { TransactionService } from '../service/transaction.service';
+import { PaymentService } from '../service/payment.service';
 
-@Controller('api/v1/transactions')
-export class TransactionController {
-  constructor(private readonly shipmentService: TransactionService) {}
+@Controller('api/v1/payments')
+export class PaymentController {
+  constructor(private readonly shipmentService: PaymentService) {}
   @Get('/:id')
-  getUser(@Param('id') id): Promise<any> {
-    return this.shipmentService.getTransactionById(id);
+  getPaymentById(@Param('id') id): Promise<any> {
+    return this.shipmentService.getPaymentById(id);
   }
 }
